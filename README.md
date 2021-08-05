@@ -13,22 +13,9 @@ Run main.py. When prompted, either use the default COVID-19 paramters or enter c
 
 ### Requirements
 
-* Node
-* MongoDB (MongoDB Atlas or a local server)
-* Alpha Vantage API key 
-* Twitter API key
-
-### Installation
-In both the client and server folders, run:
-```
-npm install
-```
-
-### Executing program
-Set the .env files (refer to .env.example files). Ensure a local MongoDB server is running. The default port is `localhost:27017`. In both the server and client folders, run: 
-```
-npm start
-```
+* Python
+* Matplotlib (and dependencies)
+* Numpy (and dependencies)
 
 ## License
 
