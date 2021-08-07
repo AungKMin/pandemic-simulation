@@ -278,33 +278,36 @@ class Virus():
         self.anim2.event_source.start()
 
 if __name__ == '__main__':
-    user_input = input("Use Custom params? (if not, will default to Covid-19 params)\n")
-    user_params = {}
-    if (user_input.lower() == 'yes' or user_input.lower() == 'y'):
-        keys = list(COVID19_PARAMS.keys())
-        values = list(COVID19_PARAMS.values())
-        index = 0
-        while index < len(keys):
-            try: 
-                if type(values[index]) is float:
-                    user_params[keys[index]] = float(input('{} (COVID-19 value: {}): '.format(keys[index], values[index])))
-                else: 
-                    user_params[keys[index]] = int(input('{} (COVID-19 value: {}): '.format(keys[index], values[index])))                    
-            except ValueError: 
-                print("Invalid Input - please try again")
-                continue
-            index += 1
-    else :
-        user_params = COVID19_PARAMS
-    coronavirus = Virus(user_params)
-    fig, anim = coronavirus.animate()
+    try:
+        user_input = input("Use Custom params? (if not, will default to Covid-19 params)\n")
+        user_params = {}
+        if (user_input.lower() == 'yes' or user_input.lower() == 'y'):
+            keys = list(COVID19_PARAMS.keys())
+            values = list(COVID19_PARAMS.values())
+            index = 0
+            while index < len(keys):
+                try: 
+                    if type(values[index]) is float:
+                        user_params[keys[index]] = float(input('{} (COVID-19 value: {}): '.format(keys[index], values[index])))
+                    else: 
+                        user_params[keys[index]] = int(input('{} (COVID-19 value: {}): '.format(keys[index], values[index])))                    
+                except ValueError: 
+                    print("Invalid Input - please try again")
+                    continue
+                index += 1
+        else :
+            user_params = COVID19_PARAMS
+        coronavirus = Virus(user_params)
+        fig, anim = coronavirus.animate()
 
-    index = 0
-    keys = list(user_params.keys())
-    values = list(user_params.values())
-    while index < len(keys): 
-        fig.text(0.2, 0.9 - 0.05*index, '{}: {}'.format(keys[index], values[index]))
-        index += 1
-    plt.show()
+        index = 0
+        keys = list(user_params.keys())
+        values = list(user_params.values())
+        while index < len(keys): 
+            fig.text(0.2, 0.9 - 0.05*index, '{}: {}'.format(keys[index], values[index]))
+            index += 1
+        plt.show()
+    except Exception as err: 
+        print(err)
 
 
