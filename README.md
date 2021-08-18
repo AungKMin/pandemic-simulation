@@ -1,7 +1,8 @@
 # Pandemic Simulator
 
 A simple model of a virus spreading over a population.
-Similar to the visuals presented here: https://www.washingtonpost.com/graphics/2020/health/coronavirus-how-epidemics-spread-and-end/
+
+Inspired by the visuals presented here: https://www.washingtonpost.com/graphics/2020/health/coronavirus-how-epidemics-spread-and-end/
 
 ![Pandemic Simulator Demo](demo/demo.gif)
 
